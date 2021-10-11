@@ -85,3 +85,10 @@ function init() {
 
 // Function call to initialize app
 init();
+
+//document.createElement
+// document.appendChild
+// document.insertBefore
+// document.insertAdjacentHTML
+// http://net-informations.com/js/iq/elements.htm reminder of creating HTML dynamically
+// https://www.iusmentis.com/technology/www/relativeurls/ Using and interpreting relative URLs
