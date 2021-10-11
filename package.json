@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen/issues"
   },
-  "homepage": "https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen#readme"
+  "homepage": "https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen#readme",
+  "devDependencies": {
+    "jest": "^27.2.5"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
 }
