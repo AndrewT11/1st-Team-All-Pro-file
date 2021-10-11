@@ -1,0 +1,23 @@
+{
+  "name": "1st-Team-All-Pro-file-Gen",
+  "version": "1.0.0",
+  "description": "A team profile generator to the max.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen/issues"
+  },
+  "homepage": "https://github.com/AndrewT11/1st-Team-All-Pro-file-Gen#readme"
+}
