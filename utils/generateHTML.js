@@ -10,7 +10,31 @@ function generateHTML(data) {
         <title>The Squawd</title>
     </head>
     <body>
-        
+    <section id="container" col-12>`        
+    //Should look and work something like this. createElement into flex inline with col-11 will have col-3 move to next row   
+        // <div id="teamContainer" col-11>
+            // <div class="employeeCard" col-3>
+            //     <div id="employeeCardHeader">
+            //         <h1 class = "title" id="name"></h1>
+            //         <icon col-1>
+            //         <div class="employeeTitle" col-2></div>
+            //     </div>
+            //     <div>
+            //         <div id="id"></div>
+            //         <div id="email"></div>
+            //     if(questionRender === manager) {
+            //         <div id="officeNumber"></div>
+            //     } else if(questionRender === engineer) {
+            //         <div id="github"></div>
+            //     } else if(questionRender === intern) {
+            //         <div id="school"></div>
+            //     } else {
+            //         return "";
+            //     }
+            //     </div>
+        //    </div> 
+        `</div>
+    </section>
 
 
     <!-- JavaScript Bundle with Popper -->
