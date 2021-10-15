@@ -3,9 +3,15 @@ const fs = require('fs');
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
 
-//look up extends
-// class Intern extends Employee()
-// or something like that. Subclass notes. Maybe superman prototype example.
+//importing sub Classes
+const Employee = require('./lib/Employee');
+const Engineer = require('./lib/Engineer');
+const Manager = require('./lib/Manager');
+const Intern = require('./lib/Intern');
+
+let teamArr = [];
+
+
 
 //baseline framework from last hw
 // TODO: Create an array of questions for user input
@@ -13,60 +19,59 @@ const questions = function () {
     return inquirer.prompt([
         {
             type: 'input',
-            name: 'title',
-            message: ''
+            name: 'name',
+            message: 'What is your name?'
         },
         {
             type: 'input',
-            name: 'description',
-            message: ''
+            name: 'id',
+            message: 'Please input your id'
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please input your email'
         },
         {
             type: 'list',
-            name: '',
-            message: '',
-            choices: [
-                
+            name: 'role',
+            message: 'What position does the employee hold?',
+            choices: [ 
+                "Manager",
+                "Engineer",
+                "Intern"
             ]
-        },
-        {
-            type: 'list',
-            name: 'color',
-            message: '',
-            choices: [
-                
-            ]
-        },
-        {
-            type: 'input',
-            name: 'installation',
-            message: ''
-        },
-        {
-            type: 'input',
-            name: 'usage',
-            message: ''
-        },
-        {
-            type: 'input',
-            name: 'contribution',
-            message: ''
-        },
-        {
-            type: 'input',
-            name: 'test',
-            message: ''
-        },
-        {
-            type: 'input',
-            name: 'github',
-            message: ''
-        },
-        {
-            type: 'input',
-            name: 'linkedin',
-            message: ''
-        },
+        }
+        .then(answers => {
+        if (role === "Manager") { 
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'email',
+                    message: 'Please input your email'
+                }
+            ])
+
+        } else if (role === "Engineer") {
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'email',
+                    message: 'Please input your email'
+                    
+                }
+
+        } else (role === "Intern") {
+            inquirer.prompt([
+                {
+                    type: 'input',
+                    name: 'email',
+                    message: 'Please input your email'
+                }
+
+        }}
+    }
+
     ])    
 }
 
