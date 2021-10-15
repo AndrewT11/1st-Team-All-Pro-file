@@ -11,14 +11,16 @@ describe('Manager', () => {
     expect(manager.officeNumber).toEqual(105)
     });
 
-    it.todo('should get the manager\'s office number', () => {
+    it('should get the manager\'s office number', () => {
     
         const manager = new Manager("Chris", 12, "chris@chrisstallcup.com", 105)
-    expect(manager.officeNumber).toEqual('105')
+    expect(manager.officeNumber).toEqual(105)
     });
 
-    it.todo('should return manager role');
+    it('should return manager role', () => {
 
-    it.todo('should return manager role');
+        const manager = new Manager("Chris", 12, "chris@chrisstallcup.com", 105)
+    expect(manager.getRole()).toEqual("Manager");
+    });
 
 });
