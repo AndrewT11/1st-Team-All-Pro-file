@@ -20,17 +20,17 @@ const questions = function () {
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name?'
+            message: "What is the employee's name?"
         },
         {
             type: 'input',
             name: 'id',
-            message: 'Please input your id'
+            message: 'Please input the employee\'s id'
         },
         {
             type: 'input',
             name: 'email',
-            message: 'Please input your email'
+            message: 'Please input the employee\'s email'
         },
         {
             type: 'list',
@@ -39,38 +39,55 @@ const questions = function () {
             choices: [ 
                 "Manager",
                 "Engineer",
-                "Intern"
+                "Intern",
+                "No more. We broke."
             ]
         }
         .then(answers => {
-        if (role === "Manager") { 
-            inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'email',
-                    message: 'Please input your email'
-                }
-            ])
+            if (answers.role === "Manager") { 
+                inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'office',
+                        message: "What is the manager's office number?"
+                    },
+                    {
+                        type: 'confirm',
+                        name: 'addTeamMember',
+                        message: "Would you like to add another team member?"
+                    }
+                ]) //what to do here. If another team member, want to questions() again. .then(answers). Where does this data go? Send info to make manager card. collect info from all employees, then generateHTML() pushed after.
 
-        } else if (role === "Engineer") {
-            inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'email',
-                    message: 'Please input your email'
-                    
-                }
+            } else if (answers.role === "Engineer") {
+                inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'github',
+                        message: "What is engineer's Github id?"
 
-        } else (role === "Intern") {
-            inquirer.prompt([
-                {
-                    type: 'input',
-                    name: 'email',
-                    message: 'Please input your email'
-                }
-
-        }}
-    }
+                    },
+                    {
+                        type: 'confirm',
+                        name: 'addTeamMember',
+                        message: "Would you like to add another team member?"
+                    }
+                ])
+            } else (answers.role === "Intern") {
+                inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'school',
+                        message: 'What school did the intern attend?'
+                    },
+                    {
+                        type: 'confirm',
+                        name: 'addTeamMember',
+                        message: "Would you like to add another team member?"
+                    }
+                ])
+            }
+        })
+    
 
     ])    
 }
