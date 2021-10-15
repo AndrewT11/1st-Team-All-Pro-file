@@ -1,5 +1,5 @@
 //adding in required js for testing
-const Intern = require('../lib/intern')
+const Intern = require('../lib/Intern')
 
 
 
@@ -25,7 +25,7 @@ describe('Intern',()=>{
         it('should return intern role',() => {
 
             const intern = new Intern("Jay", 11, "email@email.com", "UT Austin")
-            expect(intern.getRole()).toEqual("Intern")
+        expect(intern.getRole()).toEqual("Intern")
         });
     });
 });

@@ -72,7 +72,7 @@ const questions = function () {
                         message: "Would you like to add another team member?"
                     }
                 ])
-            } else (answers.role === "Intern") {
+            } else if (answers.role === "Intern") {
                 inquirer.prompt([
                     {
                         type: 'input',
@@ -85,10 +85,10 @@ const questions = function () {
                         message: "Would you like to add another team member?"
                     }
                 ])
+            } else {
+                return answers;
             }
         })
-    
-
     ])    
 }
 

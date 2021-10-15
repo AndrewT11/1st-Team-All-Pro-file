@@ -1,5 +1,5 @@
 //adding in required js for testing
-const Manager = require('../lib/manager')
+const Manager = require('../lib/Manager')
 
 describe('Manager', () => {
     describe('Initialization', () => {

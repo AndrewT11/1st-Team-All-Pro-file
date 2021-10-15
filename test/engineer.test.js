@@ -1,6 +1,6 @@
 //adding in required js for testing
-const Engineer = require('../lib/engineer')
-const engineer = require('../lib/engineer')
+const Engineer = require('../lib/Engineer')
+
 
 describe('Engineer', () => {
     describe('Initialization', () => {
