@@ -13,25 +13,9 @@ let teamArr = [];
 
 
 
-//baseline framework from last hw
 // TODO: Create an array of questions for user input
 const questions = function () {
-    return inquirer.prompt([
-        {
-            type: 'input',
-            name: 'name',
-            message: "What is the employee's name?"
-        },
-        {
-            type: 'input',
-            name: 'id',
-            message: 'Please input the employee\'s id'
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: 'Please input the employee\'s email'
-        },
+   return inquirer.prompt([
         {
             type: 'list',
             name: 'role',
@@ -42,10 +26,26 @@ const questions = function () {
                 "Intern",
                 "No more. We broke."
             ]
-        }
-        .then(answers => {
-            if (answers.role === "Manager") { 
-                inquirer.prompt([
+        } 
+    ]).then((answers) => {
+            console.log(answers)
+            if(answers.role === "Manager"){
+                return inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'name',
+                        message: "What is the employee's name?"
+                    },
+                    {
+                        type: 'input',
+                        name: 'id',
+                        message: 'Please input the employee\'s id'
+                    },
+                    {
+                        type: 'input',
+                        name: 'email',
+                        message: 'Please input the employee\'s email'
+                    },
                     {
                         type: 'input',
                         name: 'office',
@@ -56,10 +56,29 @@ const questions = function () {
                         name: 'addTeamMember',
                         message: "Would you like to add another team member?"
                     }
-                ]) //what to do here. If another team member, want to questions() again. .then(answers). Where does this data go? Send info to make manager card. collect info from all employees, then generateHTML() pushed after.
-
-            } else if (answers.role === "Engineer") {
-                inquirer.prompt([
+                ]) .then((answers) => {
+                        teamArr.push(answers);
+                        if(answers.addTeamMember === true)  {
+                            questions();
+                        }
+                })
+            } else if(answers.role === "Engineer") {
+                return inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'name',
+                        message: "What is the employee's name?"
+                    },
+                    {
+                        type: 'input',
+                        name: 'id',
+                        message: 'Please input the employee\'s id'
+                    },
+                    {
+                        type: 'input',
+                        name: 'email',
+                        message: 'Please input the employee\'s email'
+                    },
                     {
                         type: 'input',
                         name: 'github',
@@ -70,10 +89,30 @@ const questions = function () {
                         type: 'confirm',
                         name: 'addTeamMember',
                         message: "Would you like to add another team member?"
+                    }                    
+                ]).then((answers) => {
+                    teamArr.push(answers);
+                    if(answers.addTeamMember === true)  {
+                        questions();
                     }
-                ])
-            } else if (answers.role === "Intern") {
-                inquirer.prompt([
+                })
+            } else if(answers.role === "Intern") {
+                return inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'name',
+                        message: "What is the employee's name?"
+                    },
+                    {
+                        type: 'input',
+                        name: 'id',
+                        message: 'Please input the employee\'s id'
+                    },
+                    {
+                        type: 'input',
+                        name: 'email',
+                        message: 'Please input the employee\'s email'
+                    },
                     {
                         type: 'input',
                         name: 'school',
@@ -84,24 +123,28 @@ const questions = function () {
                         name: 'addTeamMember',
                         message: "Would you like to add another team member?"
                     }
-                ])
-            } else {
-                return answers;
+                ]).then((answers) => {
+                    teamArr.push(answers);
+                    if(answers.addTeamMember === true)  {
+                        questions();
+                    }
+                })
             }
-        })
-    ])    
+        }).then((answers) => {
+            console.log(teamArr);
+        });
 }
-
-// TODO: Create a function to write README file
-function writeToFile(answers) {
-    fs.writeFileSync('./newHTML/index.html', generateHTML(answers))
-}
+    
+// // TODO: Create a function to write README file
+// function writeToFile(answers) {
+//     fs.writeFileSync('./newHTML/index.html', generateHTML(answers))}
+// }
 
 // TODO: Create a function to initialize app
 function init() {
     questions()
-    .then((answers) => writeToFile(answers))
-    .catch((err) => console.error(err));
+    // .then((answers) => writeToFile(answers))
+    // .catch((err) => console.error(err));
 }
 
 // Function call to initialize app
@@ -112,4 +155,34 @@ init();
 // document.insertBefore
 // document.insertAdjacentHTML
 // http://net-informations.com/js/iq/elements.htm reminder of creating HTML dynamically
-// https://www.iusmentis.com/technology/www/relativeurls/ Using and interpreting relative URLs
+// https://www.iusmentis.com/technology/www/relativeurls/ Using and interpreting relative URKs
+
+    // .then((answers) => {
+            
+        //     // let x = 'example'
+        //     // teamArr[0].x = 'hello'
+        //     console.log(answers)
+        //     if (answers.role === "Manager") { 
+        //         return inquirer.prompt([
+        //             {
+        //                 type: 'input',
+        //                 name: 'office',
+        //                 message: "What is the manager's office number?"
+        //             },
+        //             {
+        //                 type: 'confirm',
+        //                 name: 'addTeamMember',
+        //                 message: "Would you like to add another team member?"
+        //             }
+                    
+        //         ]).then((answers) => {
+        //             console.log(answers)
+        //             teamArr.push(answers)
+        //             console.log(teamArr)
+        //             if(answers.addTeamMember === 'Yes') {
+        //                 questions();
+        //             } else {
+        //                 return;
+        //             }
+                    
+                 //what to do ere. If another team member, want to questions() again. .then(answers). Where does this data go? Send info to make manager card. collect info from all employees, push into array, then generateHTML() generate items in the array on the screen.
