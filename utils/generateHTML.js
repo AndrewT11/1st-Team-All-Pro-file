@@ -1,10 +1,10 @@
 
 
 function generateHTML(teamArr) {
-    // console.log(teamArr)
+    // console.log(teamArr) //this will print array
     const generateTeamArr = function() {
         teamArr.forEach((employee) => {
-            console.log(teamArr)
+            console.log(teamArr)  //does not print. teamArr
             if (this.role === "Manager") {
                 return `
                 <div class="card employee-card" col-3>
@@ -41,14 +41,14 @@ function generateHTML(teamArr) {
                 return `  
                 <div class="card employee-card" col-3>
                     <div class="card-header">
-                        <h2 class="card-title">${this.name}</h2>
-                        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${this.role}</h3>
+                        <h2 class="card-title">${teamArr.name}</h2>
+                        <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${teamArr.role}</h3>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">ID: ${this.id}</li>
-                            <li class="list-group-item">Email: <a href="mailto:${this.email}">${this.email}</a></li>
-                            <li class="list-group-item">School: ${this.school}}</li>
+                            <li class="list-group-item">ID: ${teamArr.id}</li>
+                            <li class="list-group-item">Email: <a href="mailto:${teamArr.email}">${teamArr.email}</a></li>
+                            <li class="list-group-item">School: ${teamArr.school}}</li>
                         </ul>
                     </div>
                 </div>

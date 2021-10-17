@@ -2,7 +2,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
-const { generateTeamArr } = require('./utils/generateHtml')
+const path = require('path');
+
 
 //importing sub Classes
 const Employee = require('./lib/Employee');
@@ -13,7 +14,7 @@ const Intern = require('./lib/Intern');
 let teamArr = [];
 
 
-
+const app = function () {
 // Question choosing which role to create
 const questions = function () {
    return inquirer.prompt([
@@ -134,26 +135,22 @@ const addTeamMember = function () {
         if(answers.teamMember === true){
             questions();
         } else {
-            // console.log(teamArr)
-            finishQuestions(teamArr);
+            // console.log('questions completed')
+            questionFinish(teamArr);
         }
     })
 }
 
 // // TODO: Create a function to write README file
 // function writeToFile(teamArr) {
-function finishQuestions(teamArr) {
-    fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr))
-}
-//}
-// TODO: Create a function to initialize app
-// function init() {
+function questionFinish(teamArr) {
+
+   
+
+        fs.writeFileSync("./newHTML/index.html",generateHTML(teamArr), "utf-8")
+    // fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr), 'utf-8') 
+    }
 questions()
-    // .then((teamArr) => writeToFile(teamArr))
-    // .catch((err) => console.error(err));
-// }
-
-// Function call to initialize app
-// init();
-
+}
+app(); 
 
