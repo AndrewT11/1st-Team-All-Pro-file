@@ -2,6 +2,7 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
+const { generateTeamArr } = require('./utils/generateHtml')
 
 //importing sub Classes
 const Employee = require('./lib/Employee');
@@ -13,7 +14,7 @@ let teamArr = [];
 
 
 
-// TODO: Create an array of questions for user input
+// Question choosing which role to create
 const questions = function () {
    return inquirer.prompt([
         {
@@ -27,9 +28,10 @@ const questions = function () {
             ]
         }
    ])
-    //add if statements here instead.
+    //question specific to employee type based on selection
             .then((answers) => {
                 if(answers.role === "Manager") {
+                    // console.log(answers.role)
                     return inquirer.prompt([
                         {
                             type: 'input',
@@ -51,8 +53,9 @@ const questions = function () {
                             name: 'office',
                             message: "Enter manager's office number?"
                         },
+                        //creation of subClass that is pushed into teamArr
                     ]).then(function (answers) {
-                        const manager = new Manager(answers.name, answers.id, answers.email, answers.office)
+                        const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
                         teamArr.push(manager)
                         console.log('manager created')
                         addTeamMember()
@@ -79,6 +82,7 @@ const questions = function () {
                             name: 'github',
                             message: "Enter enginener's Github?"
                         },
+                        //creation of subClass that is pushed into teamArr
                     ]) .then(function (answers) {
                         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
                         teamArr.push(engineer)
@@ -107,6 +111,7 @@ const questions = function () {
                             name: 'school',
                             message: "What school did the intern attend?"
                         },
+                        //creation of subClass that is pushed into teamArr
                     ]) .then(function(answers) {
                         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
                         teamArr.push(intern)
@@ -129,26 +134,26 @@ const addTeamMember = function () {
         if(answers.teamMember === true){
             questions();
         } else {
-            console.log(teamArr)
-            generateHTML(answers)
+            // console.log(teamArr)
+            finishQuestions(teamArr);
         }
     })
 }
 
 // // TODO: Create a function to write README file
-function writeToFile(teamArr) {
-    
-    fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr))}
+// function writeToFile(teamArr) {
+function finishQuestions(teamArr) {
+    fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr))
+}
+//}
+// TODO: Create a function to initialize app
+// function init() {
+questions()
+    // .then((teamArr) => writeToFile(teamArr))
+    // .catch((err) => console.error(err));
 // }
 
-// TODO: Create a function to initialize app
-function init() {
-    questions()
-    .then((teamArr) => writeToFile(teamArr))
-    .catch((err) => console.error(err));
-}
-
 // Function call to initialize app
-init();
+// init();
 
 
