@@ -121,7 +121,7 @@ const questions = function () {
                     })              
                 }
         })
-    
+
 }
 
 const addTeamMember = function () {
@@ -138,8 +138,8 @@ const addTeamMember = function () {
             console.log(teamArr[0].name)
             questionFinish(teamArr);
         }
-    })
-}
+    });
+};
 
 // // TODO: Create a function to write README file
 // function writeToFile(teamArr) {
