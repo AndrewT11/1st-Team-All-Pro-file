@@ -135,7 +135,7 @@ const addTeamMember = function () {
         if(answers.teamMember === true){
             questions();
         } else {
-            // console.log('questions completed')
+            console.log(teamArr[0].name)
             questionFinish(teamArr);
         }
     })
@@ -144,8 +144,8 @@ const addTeamMember = function () {
 // // TODO: Create a function to write README file
 // function writeToFile(teamArr) {
 function questionFinish(teamArr) {
+console.log("questionFinishinsides")
 
-   
 
         fs.writeFileSync("./newHTML/index.html",generateHTML(teamArr), "utf-8")
     // fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr), 'utf-8') 
