@@ -32,13 +32,13 @@ body {
 }
 
 .card-header {
-    font-size: 10px;
+    font-size: 15px;
     background-color: black;
     color: darkorange;
-    height: 100px;
+    height: 100%;
     margin: 0;
     padding: 0 20px 10px 10px;
-    width:100%;
+    /* width:100%; */
 }
 
 .card-body {
@@ -54,7 +54,7 @@ body {
 }
 
 .employee-card {
-    display: inline-flex;
+    /* display: inline-flex; */
     justify-content: center;
     align-items: center;
     width: 20%;
@@ -62,16 +62,12 @@ body {
     border: 2px solid black;
     margin: 25px;
     
-    background-color: tan;
-    color: darkgreen;
+    
     
 }
 
 .employee-card:hover {
-    box-shadow: 0 0 20px darkgreen;
+    box-shadow: 0 0 100px darkorange;
 
 }
 
-.card-title {
-   
-}
