@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+}
+
+.header {
+    font-size: 40px;
+    background-color: darkgreen;
+    color: tan;
+}
+
+.employee-card {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 30%;
+    border: 2px solid black;
+    margin: 25px;
+    background-color: tan;
+    color: darkgreen;
+    
+}
+
+.card-title {
+    padding: 15px;
+}
