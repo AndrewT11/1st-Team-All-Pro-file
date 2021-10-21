@@ -1,7 +1,9 @@
-//adding in required js for testing
+//importing Employee.js
 const Employee = require('../lib/Employee')
 
+//begin testing
 describe('Employee', () => {
+    //creation of test suite
     describe('Initialization', () => {
         it('should create employee object', () => { 
             const employee = new Employee("Aubrey", 14, "aubrey@aubrey.com")
@@ -30,6 +32,5 @@ describe('Employee', () => {
             const employee = new Employee("Aubrey", 14, "aubrey@aubrey.com")
         expect(employee.getRole()).toEqual("Employee")
         });
-
     })  
 })

@@ -1,8 +1,9 @@
 //adding in required js for testing
 const Engineer = require('../lib/Engineer')
 
-
+//begin engineer testing
 describe('Engineer', () => {
+    //creation of test suite
     describe('Initialization', () => {
         it('should create an engineer object', () => {
 

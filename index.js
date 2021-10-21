@@ -124,6 +124,7 @@ const questions = function () {
 
 }
 
+//function that gives option of generating another team member.
 const addTeamMember = function () {
     return inquirer.prompt([
         {
@@ -141,11 +142,8 @@ const addTeamMember = function () {
     });
 };
 
-// // TODO: Create a function to write README file
-// function writeToFile(teamArr) {
+// take answers from command line prompts and begin writing index.html
 function questionFinish(teamArr) {
-console.log("questionFinishinsides")
-
 
         fs.writeFileSync("./newHTML/index.html",generateHTML(teamArr), "utf-8")
     // fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr), 'utf-8') 
