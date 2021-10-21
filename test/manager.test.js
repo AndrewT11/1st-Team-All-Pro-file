@@ -1,7 +1,9 @@
 //adding in required js for testing
 const Manager = require('../lib/Manager')
 
+//begin testing
 describe('Manager', () => {
+    //creation of test suite
     describe('Initialization', () => {
         it('should create a manager object', () => {
             

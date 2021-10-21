@@ -2,8 +2,9 @@
 const Intern = require('../lib/Intern')
 
 
-
+//begin testing
 describe('Intern',()=>{
+    //creation of test suite
     describe('Initialization', () => {
         it('should create an intern object', () => {
 
