@@ -1,5 +1,5 @@
 # 1st-Team-All-Pro-file-Gen
-## The most fun you'll have creating team profile cards!
+## The most fun you'll have creating HTML generated team profile cards!
 
 **Version 1.0**
 
@@ -40,22 +40,25 @@ THEN I exit the application, and the HTML is generated
 
 
 
-## Screenshot
-![Weather Demo](assets/sweater-weather.gif)
+## Media
+
+Video Link: https://drive.google.com/file/d/1T7l87CgCK__L1DTm9UTIFNQvapC50GnQ/view?usp=sharing
+
 
 ## Links
-* [Deployed Website Link](https://andrewt11.github.io/Sweater-Weather/)
-* [Code Repository Link](https://github.com/AndrewT11/Sweater-Weather)
+* [Deployed Website Link](https://andrewt11.github.io/1st-Team-All-Pro-file/)
+* [Code Repository Link](https://github.com/AndrewT11/1st-Team-All-Pro-file/)
 
 ## Credits
 Andrew Tran
+Chris Stallcup
+
 
 ### Resources
 
 * https://www.w3schools.com/
 * https://developer.mozilla.org/en-US/
 * https://choosealicense.com/
-* https://openweathermap.org/
 * https://www.stackoverflow.com
 
 
