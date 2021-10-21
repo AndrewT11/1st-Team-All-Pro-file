@@ -7,12 +7,10 @@ const generateManager = (manager) => {
             <h2 class="card-title">${manager.name}</h2>
             <h3 class="card-title"><i class="fas fa-space-shuttle"></i> ${manager.role}</h3>
         </div>
-        <div class="card-body">
-            
+        <div class="card-body">           
                 <div class="group-item">ID: ${manager.id}</div>
                 <div class="group-item">Email: <a href="mailto: ${manager.email}">${manager.email}</a></div>
-                <div class="group-item">Office number: ${manager.officeNumber}</div>
-            
+                <div class="group-item">Office number: ${manager.officeNumber}</div>           
         </div>
     </div>
     `
@@ -25,12 +23,10 @@ const generateEngineer = (engineer) => {
             <h2 class="card-title">${engineer.name}</h2>
             <h3 class="card-title"><i class="fas fa-hat-wizard"></i> ${engineer.role}</h3>
         </div>
-        <div class="card-body">
-            
+        <div class="card-body">            
                 <div class="group-item">ID: ${engineer.id}</div>
                 <div class="group-item">Email: <a href="mailto: ${engineer.email}">${ engineer.email}</a></div>
                 <div class="group-item">GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></div>
-            
         </div>
     </div>
     `
@@ -44,12 +40,10 @@ const generateIntern = (intern) => {
                     <h2 class="card-title">${intern.name}</h2>
                     <h3 class="card-title"><i class="fas fa-user-ninja"></i> ${intern.role}</h3>
                 </div>
-                <div class="card-body">
-                    
+                <div class="card-body">                    
                         <div class="group-item">ID: ${intern.id}</div>
                         <div class="group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></div>
-                        <div class="group-item">School: ${intern.school}</div>
-                    
+                        <div class="group-item">School: ${intern.school}</div>                    
                 </div>
             </div>
             `
