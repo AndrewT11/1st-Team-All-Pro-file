@@ -4,7 +4,6 @@ const inquirer = require('inquirer');
 const generateHTML = require('./utils/generateHTML');
 const path = require('path');
 
-
 //importing sub Classes
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
@@ -12,7 +11,6 @@ const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 
 let teamArr = [];
-
 
 const app = function () {
 // Question choosing which role to create
@@ -58,7 +56,6 @@ const questions = function () {
                     ]).then(function (answers) {
                         const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
                         teamArr.push(manager)
-                        console.log('manager created')
                         addTeamMember()
                     })
                 } else if (answers.role === "Engineer") {
@@ -87,7 +84,6 @@ const questions = function () {
                     ]) .then(function (answers) {
                         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
                         teamArr.push(engineer)
-                        console.log('engineer created')
                         addTeamMember()
                     })
                 } else if (answers.role === "Intern") {
@@ -116,7 +112,6 @@ const questions = function () {
                     ]) .then(function(answers) {
                         const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
                         teamArr.push(intern)
-                        console.log('intern created')
                         addTeamMember()
                     })              
                 }
@@ -144,11 +139,12 @@ const addTeamMember = function () {
 
 // take answers from command line prompts and begin writing index.html
 function questionFinish(teamArr) {
-
         fs.writeFileSync("./newHTML/index.html",generateHTML(teamArr), "utf-8")
-    // fs.writeFileSync('./newHTML/index.html', generateHTML(teamArr), 'utf-8') 
-    }
-questions()
 }
+//begins the questions
+questions()
+
+}
+//just wrapping functions in functions for fun, cause that's what life is about.
 app(); 
 
