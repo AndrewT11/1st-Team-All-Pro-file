@@ -30,7 +30,6 @@ const questions = function () {
     //question specific to employee type based on selection
             .then((answers) => {
                 if(answers.role === "Manager") {
-                    // console.log(answers.role)
                     return inquirer.prompt([
                         {
                             type: 'input',
@@ -131,7 +130,6 @@ const addTeamMember = function () {
         if(answers.teamMember === true){
             questions();
         } else {
-            console.log(teamArr[0].name)
             questionFinish(teamArr);
         }
     });

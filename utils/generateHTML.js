@@ -37,7 +37,6 @@ const generateEngineer = (engineer) => {
 
 //generated HTML for Intern
 const generateIntern = (intern) => {
-    console.log("intern inside")
     return `  
             <div class="card employee-card">
                 <div class="card-header">
@@ -77,6 +76,8 @@ const renderTeamArr = (teamArr) => {
         }
 
     })
+    const finalTeam = renderArr.join(``)
+    return finalTeam;
 };
 
 //main HTML body that is rendered
@@ -87,7 +88,7 @@ return `
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -95,6 +96,7 @@ return `
       crossorigin="anonymous"/>
       <link rel="stylesheet" href="style.css"/>
     />
+
     <title>The Jungle Squawd</title>
 </head>
 <body>
